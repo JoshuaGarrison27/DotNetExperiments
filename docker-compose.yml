@@ -6,3 +6,8 @@ services:
     build:
       context: .
       dockerfile: DotNetExperiments.Web/Dockerfile
+  dotnetexperiments.api:
+    image: ${DOCKER_REGISTRY-}dotnetexperimentsapi
+    build:
+      context: .
+      dockerfile: DotNetExperiments.API/Dockerfile

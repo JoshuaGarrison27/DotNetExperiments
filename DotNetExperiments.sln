@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetExperiments.API", "DotNetExperiments\DotNetExperiments.API.csproj", "{69AC8D37-15EE-4B40-B355-F3A7891604A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetExperiments.API", "DotNetExperiments.API\DotNetExperiments.API.csproj", "{69AC8D37-15EE-4B40-B355-F3A7891604A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetExperiments.Web", "DotNetExperiments.Web\DotNetExperiments.Web.csproj", "{22C6C986-E75D-4F19-827E-D45082D2DA1B}"
 EndProject
