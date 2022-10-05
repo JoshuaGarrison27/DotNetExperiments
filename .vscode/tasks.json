@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "down",
+            "command": "docker-compose",
+            "type": "shell",
+            "args": [
+                "-f",
+                "${workspaceFolder}/docker-compose.yml",
+                "-f",
+                "${workspaceFolder}/docker-compose.override.yml",
+                "-f",
+                "${workspaceFolder}/obj/Docker/docker-compose.vs.debug.g.yml",
+                "-p",
+                "dockercompose-dne",
+                "down"
+            ]
+        },
+        {
+            "label": "up",
+            "command": "docker-compose",
+            "type": "shell",
+            "args": [
+                "-f",
+                "${workspaceFolder}/docker-compose.yml",
+                "-f",
+                "${workspaceFolder}/docker-compose.override.yml",
+                "-f",
+                "${workspaceFolder}/obj/Docker/docker-compose.vs.debug.g.yml",
+                "-p",
+                "dockercompose-dne",
+                "--ansi",
+                "never",
+                "up",
+                "-d"
+            ]
+        },
+        {
+            "label": "compose-debug",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "${workspaceFolder}/DotNetExperiments.Web/DotNetExperiments.Web.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": [],
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "down",
+                "up"
+            ]
+        }
+    ]
+}
