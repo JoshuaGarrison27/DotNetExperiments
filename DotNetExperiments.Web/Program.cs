@@ -18,7 +18,7 @@ builder.Services.AddLogging(builder =>
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient("API", client =>
 {
-  client.BaseAddress = new Uri("https://host.docker.internal:8443/");
+  client.BaseAddress = new Uri(Environment.GetEnvironmentVariable("API_URL") ?? "http://host.docker.internal:8080/");
   client.DefaultRequestHeaders.Accept.Clear();
   client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
   client.Timeout = TimeSpan.FromMilliseconds(30000);
@@ -38,7 +38,7 @@ if (!app.Environment.IsDevelopment())
   app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();

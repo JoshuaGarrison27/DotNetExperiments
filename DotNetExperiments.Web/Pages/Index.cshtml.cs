@@ -20,7 +20,7 @@ namespace DotNetExperiments.Web.Pages
         {
             try
             {
-                var response = await _httpClient.GetStringAsync("https://host.docker.internal:8443/WeatherForecast/GetWeatherForecast").ConfigureAwait(false);
+                var response = await _httpClient.GetStringAsync("WeatherForecast/GetWeatherForecast").ConfigureAwait(false);
                 if (response != null)
                 {
                     WeatherMessages = JsonConvert.DeserializeObject<IEnumerable<WeatherForecast>>(response);
